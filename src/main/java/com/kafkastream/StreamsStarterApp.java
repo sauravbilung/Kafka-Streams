@@ -33,7 +33,7 @@ public class StreamsStarterApp {
 		
 		// Step 1: getting a stream from Kafka
 		// and converting it to KStream
-		KStream<String, String> wordCountInput = builder.stream("word-count-topic");
+		KStream<String, String> wordCountInput = builder.stream("word-count-input");
 		// Step 2 : map values to lower case (using lambda function)
 		KTable<String, Long> wordCounts = wordCountInput.mapValues(textLine -> textLine.toLowerCase())
 				// Step 3: flatMap values split by space
@@ -49,7 +49,7 @@ public class StreamsStarterApp {
 	  // Step 7 : Writing the results back to kafka
 	  // As we can see that we are storing the final key-values as string and long so we need to
 	  // specify here	
-		String outputTopic="word-count-topic";
+		String outputTopic="word-count-output";
 		Serde<String> stringSerde= Serdes.String();
 		Serde<Long> longSerde=Serdes.Long();
 		// Produced is used to provide optional parameters. Here we
@@ -60,5 +60,8 @@ public class StreamsStarterApp {
         
         // printing the topology
         System.out.println(streams.toString());
+        
+        // shutdown hook to correctly close the streams application
+        Runtime.getRuntime().addShutdownHook(new Thread(streams::close));
 	}
 }
