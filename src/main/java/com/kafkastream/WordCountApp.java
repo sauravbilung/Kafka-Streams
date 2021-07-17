@@ -13,7 +13,7 @@ import org.apache.kafka.streams.kstream.KStream;
 import org.apache.kafka.streams.kstream.KTable;
 import org.apache.kafka.streams.kstream.Produced;
 
-public class StreamsStarterApp {
+public class WordCountApp {
 	public static void main(String[] args) {
 		Properties properties = new Properties();
 		properties.put(StreamsConfig.APPLICATION_ID_CONFIG, "wordcount-application");
