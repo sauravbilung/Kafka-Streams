@@ -7,19 +7,20 @@ A project to explore Kafka Streams
 2) Parameters are hardcoded.
 3) Start the Zookeeper and Kafka servers: 
   
-  open a shell - zookeeper is at localhost:2181
-  Start Zookeeper : ```bin/zookeeper-server-start.sh config/zookeeper.properties```
-  open another shell - kafka is at localhost:9092
-  Start Kafka     : ```bin/kafka-server-start.sh config/server.properties```
+    i)  open a shell - zookeeper is at localhost:2181<br/>
+        Start Zookeeper : ```bin/zookeeper-server-start.sh config/zookeeper.properties```<br/>
+    ii) open another shell - kafka is at localhost:9092<br/>
+        Start Kafka     : ```bin/kafka-server-start.sh config/server.properties```<br/>
     
 4) Creating the input and output topics :  
-   Input:
-   Older kafka versions :```bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 2 --topic word-count-input```  
-   Newer Kafka Versions :```bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 2 --topic word-count-input```
+
+   Input:<br/>
+   Older kafka versions :```bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 2 --topic word-count-input```<br/> 
+   Newer Kafka Versions :```bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 2 --topic word-count-input```<br/>
    
-   Output:
-   Older kafka versions :```bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 2 --topic word-count-output```
-   Newer Kafka versions :```bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 2 --topic word-count-output```
+   Output:<br/>
+   Older kafka versions :```bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 2 --topic word-count-output```<br/>
+   Newer Kafka versions :```bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 2 --topic word-count-output```<br/>
 
 
 5) To list all the topics:  
