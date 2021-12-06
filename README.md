@@ -24,8 +24,8 @@ A project to explore Kafka Streams
 
 
 5) To list all the topics:  
-   Older kafka versions : ``` bin/kafka-topics.sh --list --zookeeper localhost:2181 ```
-   Newer kakfa versions : ```bin/kafka-topics.sh --list --bootstrap-server localhost:9092```
+   Older kafka versions : ``` bin/kafka-topics.sh --list --zookeeper localhost:2181 ```<br/>
+   Newer kakfa versions : ```bin/kafka-topics.sh --list --bootstrap-server localhost:9092```<br/>
       
 6) Launch the Kafka Consumer :    
   ``` 
